@@ -11,6 +11,14 @@
 		AC5A76E52B2C427000F91FD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A76E42B2C427000F91FD5 /* ContentView.swift */; };
 		AC5A76E72B2C427200F91FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5A76E62B2C427200F91FD5 /* Assets.xcassets */; };
 		AC5A76EA2B2C427200F91FD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5A76E92B2C427200F91FD5 /* Preview Assets.xcassets */; };
+		AC5A76F92B2C440700F91FD5 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A76F82B2C440700F91FD5 /* UserDTO.swift */; };
+		AC5A76FB2B2C444600F91FD5 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A76FA2B2C444600F91FD5 /* APIRequest.swift */; };
+		AC5A76FE2B2C4A6B00F91FD5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A76FD2B2C4A6B00F91FD5 /* UserModel.swift */; };
+		AC5A77022B2C4C6500F91FD5 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A77012B2C4C6500F91FD5 /* UsersViewModel.swift */; };
+		AC5A77042B2C4C7900F91FD5 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A77032B2C4C7900F91FD5 /* UsersListView.swift */; };
+		AC5A77062B2C4C8700F91FD5 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A77052B2C4C8700F91FD5 /* UserView.swift */; };
+		AC5A77082B2C4D0700F91FD5 /* FetchAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A77072B2C4D0700F91FD5 /* FetchAlertModel.swift */; };
+		AC5A770A2B2C4D2100F91FD5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC5A77092B2C4D2100F91FD5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		AC5A76E42B2C427000F91FD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC5A76E62B2C427200F91FD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC5A76E92B2C427200F91FD5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC5A76F82B2C440700F91FD5 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		AC5A76FA2B2C444600F91FD5 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		AC5A76FD2B2C4A6B00F91FD5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		AC5A77012B2C4C6500F91FD5 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		AC5A77032B2C4C7900F91FD5 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		AC5A77052B2C4C8700F91FD5 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		AC5A77072B2C4D0700F91FD5 /* FetchAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAlertModel.swift; sourceTree = "<group>"; };
+		AC5A77092B2C4D2100F91FD5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +67,10 @@
 		AC5A76E12B2C427000F91FD5 /* Pago-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				AC5A76E22B2C427000F91FD5 /* Pago_SwiftUIApp.swift */,
-				AC5A76E42B2C427000F91FD5 /* ContentView.swift */,
-				AC5A76E62B2C427200F91FD5 /* Assets.xcassets */,
-				AC5A76E82B2C427200F91FD5 /* Preview Content */,
+				AC5A76F02B2C42E500F91FD5 /* Application */,
+				AC5A76F22B2C436D00F91FD5 /* Features */,
+				AC5A76F52B2C43C300F91FD5 /* Network */,
+				AC5A76F12B2C42FB00F91FD5 /* Resources */,
 			);
 			path = "Pago-SwiftUI";
 			sourceTree = "<group>";
@@ -65,6 +81,94 @@
 				AC5A76E92B2C427200F91FD5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC5A76F02B2C42E500F91FD5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A76E22B2C427000F91FD5 /* Pago_SwiftUIApp.swift */,
+				AC5A76E42B2C427000F91FD5 /* ContentView.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AC5A76F12B2C42FB00F91FD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A76E62B2C427200F91FD5 /* Assets.xcassets */,
+				AC5A76E82B2C427200F91FD5 /* Preview Content */,
+				AC5A77092B2C4D2100F91FD5 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC5A76F22B2C436D00F91FD5 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A76F32B2C437800F91FD5 /* Users */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		AC5A76F32B2C437800F91FD5 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A76FC2B2C4A5B00F91FD5 /* Model */,
+				AC5A77002B2C4C4800F91FD5 /* View */,
+				AC5A76FF2B2C4C3E00F91FD5 /* ViewModel */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		AC5A76F52B2C43C300F91FD5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A76F62B2C43D800F91FD5 /* APIRequest */,
+				AC5A76F72B2C43E800F91FD5 /* UserDTO */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AC5A76F62B2C43D800F91FD5 /* APIRequest */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A76FA2B2C444600F91FD5 /* APIRequest.swift */,
+			);
+			path = APIRequest;
+			sourceTree = "<group>";
+		};
+		AC5A76F72B2C43E800F91FD5 /* UserDTO */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A76F82B2C440700F91FD5 /* UserDTO.swift */,
+			);
+			path = UserDTO;
+			sourceTree = "<group>";
+		};
+		AC5A76FC2B2C4A5B00F91FD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A76FD2B2C4A6B00F91FD5 /* UserModel.swift */,
+				AC5A77072B2C4D0700F91FD5 /* FetchAlertModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC5A76FF2B2C4C3E00F91FD5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A77012B2C4C6500F91FD5 /* UsersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC5A77002B2C4C4800F91FD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A77032B2C4C7900F91FD5 /* UsersListView.swift */,
+				AC5A77052B2C4C8700F91FD5 /* UserView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC5A76EA2B2C427200F91FD5 /* Preview Assets.xcassets in Resources */,
+				AC5A770A2B2C4D2100F91FD5 /* Localizable.strings in Resources */,
 				AC5A76E72B2C427200F91FD5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +242,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5A76F92B2C440700F91FD5 /* UserDTO.swift in Sources */,
+				AC5A77022B2C4C6500F91FD5 /* UsersViewModel.swift in Sources */,
+				AC5A77042B2C4C7900F91FD5 /* UsersListView.swift in Sources */,
+				AC5A77062B2C4C8700F91FD5 /* UserView.swift in Sources */,
 				AC5A76E52B2C427000F91FD5 /* ContentView.swift in Sources */,
+				AC5A77082B2C4D0700F91FD5 /* FetchAlertModel.swift in Sources */,
+				AC5A76FB2B2C444600F91FD5 /* APIRequest.swift in Sources */,
+				AC5A76FE2B2C4A6B00F91FD5 /* UserModel.swift in Sources */,
 				AC5A76E32B2C427000F91FD5 /* Pago_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +383,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Pago-SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Pago-SwiftUI/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 63XWRVA4JU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -280,6 +392,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -288,6 +401,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "CIC.Pago-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,7 +414,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Pago-SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Pago-SwiftUI/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 63XWRVA4JU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -309,6 +423,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "CIC.Pago-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

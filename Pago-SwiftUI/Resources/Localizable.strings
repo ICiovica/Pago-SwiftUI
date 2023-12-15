@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Pago-SwiftUI
+
+  Created by IonutCiovica on 15/12/2023.
+  
+*/
+
+// MARK: - General
+"general_dismiss" = "Dimiss";
+
+// MARK: - Users
+"users_navigation_title" = "Contacte";
+"users_section_title" = "CONTACTELE MELE";
+
+// MARK: - Fetch Alert
+"fetch_alert_title" = "Ooops!";
+"fetch_alert_message" = "Something went wrong, please try again.";
