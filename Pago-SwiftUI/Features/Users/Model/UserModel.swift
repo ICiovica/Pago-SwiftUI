@@ -5,13 +5,14 @@
 //  Created by IonutCiovica on 15/12/2023.
 //
 
-import Foundation
+import CoreData
 
 struct UserModel: Identifiable {
     let id: String
     var name: String
     var email: String
     var phone: String
+    let objectID: NSManagedObjectID?
     
     var placeHolderInitials: String {
         let nameComponents = name.components(separatedBy: " ")
@@ -32,24 +33,35 @@ struct UserModel: Identifiable {
         return nil
     }
     
-    init(id: String, name: String, email: String, phone: String) {
+    init(id: String, name: String, email: String, phone: String, objectID: NSManagedObjectID? = nil) {
         self.id = id
         self.name = name
         self.email = email
         self.phone = phone
+        self.objectID = objectID
     }
     
-    init(user: UserDetailsModel) {
+    init(user: UserDetailsModel, objectID: NSManagedObjectID? = nil) {
         self.id = UUID().uuidString
         self.name = "\(user.firstName) \(user.lastName)"
         self.email = user.email
         self.phone = user.phone
+        self.objectID = objectID
     }
     
-    init(userDTO: UserDTO) {
+    init(userDTO: UserDTO, objectID: NSManagedObjectID? = nil) {
         self.id = userDTO.id.description
         self.name = userDTO.name
         self.email = userDTO.email
         self.phone = ""
+        self.objectID = objectID
+    }
+    
+    init(userCD: UserCD) {
+        self.id = userCD.userID ?? UUID().uuidString
+        self.name = userCD.name ?? "N/A"
+        self.email = userCD.email ?? "N/A"
+        self.phone = userCD.phone ?? "N/A"
+        self.objectID = userCD.objectID
     }
 }

@@ -23,6 +23,14 @@ struct UserDetailsView: View {
         .navigationBarTitleDisplayMode(.large)
         .overlay { saveBtnVw }
         .onAppear { vm.handleUserDetails(user) }
+        .alert(vm.coreDataAlert.title,
+               isPresented: $vm.coreDataAlert.isPresented,
+               actions: {
+            Button("general_dismiss", role: .cancel) { vm.coreDataAlert.isPresented.toggle() }
+        },
+               message: {
+            Text(vm.coreDataAlert.message)
+        })
     }
 }
 

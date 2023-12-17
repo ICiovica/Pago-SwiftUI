@@ -22,3 +22,9 @@
 // MARK: - Fetch Alert
 "fetch_alert_title" = "Ooops!";
 "fetch_alert_message" = "Something went wrong, please try again.";
+
+// MARK: - Core Data
+"core_data_alert_title" = "Ooops!";
+"core_data_alert_message" = "Something went wrong, please try again.";
+"core_data_alert_fetch_title" = "Loading Failed";
+"core_data_alert_fetch_message" = "Sorry for inconvenience, please restart application.";

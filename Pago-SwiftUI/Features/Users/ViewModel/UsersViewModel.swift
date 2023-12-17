@@ -11,11 +11,11 @@ class UsersViewModel: ObservableObject {
     @Published private(set) var users: [UserModel] = []
     @Published private(set) var isLoading = false
     var fetchAlertModel = FetchAlertModel()
+    var coreDataAlert = CoreDataAlert()
     
     @Published var user = UserDetailsModel()
     
-    @MainActor func fetchUsers() async {
-        guard users.isEmpty else { return }
+    @MainActor private func fetchUsers() async -> [UserModel] {
         defer {
             isLoading = false
         }
@@ -25,7 +25,7 @@ class UsersViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 let activeUsers = response.filter({ $0.status.rawValue.lowercased() == "inactive" })
-                users = activeUsers.map({ UserModel(userDTO: $0) })
+                return activeUsers.map({ UserModel(userDTO: $0) })
             case .failure(let error):
                 handleFetchAlert()
                 print("Error: \(error.localizedDescription)")
@@ -34,20 +34,52 @@ class UsersViewModel: ObservableObject {
             handleFetchAlert()
             print("Error: \(error.localizedDescription)")
         }
+        return []
+    }
+    
+    @MainActor func loadUsers() async {
+        do {
+            let usersCD = try CoreDataService().fetch()
+            if usersCD.isEmpty {
+                users = await fetchUsers()
+                try CoreDataService().add(users)
+            } else {
+                users = usersCD.map {UserModel(userCD: $0)
+                }
+            }
+        } catch {
+            coreDataAlert.title = "core_data_alert_fetch_title"
+            coreDataAlert.message = "core_data_alert_fetch_message"
+            coreDataAlert.isPresented = true
+            print("Fetch CD operation failed: \(error.localizedDescription)")
+        }
     }
     
     func addNewUser(completion: @escaping () -> Void) {
         guard user.isValid else { return }
-        users.append(UserModel(user: user))
-        completion()
+        do {
+            let user = UserModel(user: user)
+            try CoreDataService().add(user)
+            users.append(user)
+            completion()
+        } catch {
+            coreDataAlert.isPresented = true
+            print("Add CD operation failed: \(error.localizedDescription)")
+        }
     }
     
     func updateUser(_ user: UserModel, completion: @escaping () -> Void) {
         if let index = users.firstIndex(where: { $0.id == user.id }) {
-            users[index].name = "\(self.user.firstName) \(self.user.lastName)"
-            users[index].phone = self.user.phone
-            users[index].email = self.user.email
-            completion()
+            do {
+                try CoreDataService().updateUser(user, with: self.user)
+                users[index].name = "\(self.user.firstName) \(self.user.lastName)"
+                users[index].phone = self.user.phone
+                users[index].email = self.user.email
+                completion()
+            } catch {
+                coreDataAlert.isPresented = true
+                print("Update CD operation failed: \(error.localizedDescription)")
+            }
         }
     }
     

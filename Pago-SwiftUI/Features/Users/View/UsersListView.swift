@@ -36,7 +36,7 @@ struct UsersListView: View {
             Text(LocalizedStringKey(vm.fetchAlertModel.message))
         })
         .task {
-            await vm.fetchUsers()
+            await vm.loadUsers()
         }
     }
 }
