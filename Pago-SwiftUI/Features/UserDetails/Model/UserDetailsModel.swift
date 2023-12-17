@@ -13,6 +13,8 @@ struct UserDetailsModel {
     var phone: String = ""
     var email: String = ""
     
+    var isInvalid = false
+    
     var isValid: Bool {
         UserDetail.allCases.allSatisfy({!invalidDetail($0)})
     }

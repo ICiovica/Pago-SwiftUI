@@ -39,6 +39,9 @@ struct InputDetailView: View {
             }
         }
         .onTapGesture { isFocused.toggle() }
+        .onChange(of: user.isInvalid) { _ in
+            invalidInput = user.invalidDetail(detail)
+        }
     }
 }
 

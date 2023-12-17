@@ -56,7 +56,10 @@ class UsersViewModel: ObservableObject {
     }
     
     func addNewUser(completion: @escaping () -> Void) {
-        guard user.isValid else { return }
+        guard user.isValid else {
+            user.isInvalid.toggle()
+            return
+        }
         do {
             let user = UserModel(user: user)
             try CoreDataService().add(user)
