@@ -23,18 +23,21 @@ struct CoreDataService {
         }
     }
     
+    // Unit Tests
+    func cleanUpUsers() throws {
+        try container.viewContext.performAndWait {
+            let objects = try container.viewContext.fetch(UserCD.fetchRequest())
+            for object in objects {
+                container.viewContext.delete(object)
+                try container.viewContext.save()
+            }
+        }
+    }
+    
     func fetch() throws -> [UserCD] {
         return try container.viewContext.performAndWait {
             let objects = try container.viewContext.fetch(UserCD.fetchRequest())
             return objects
-        }
-    }
-    
-    func delete(_ user: UserModel) throws {
-        try container.viewContext.performAndWait {
-            let object = try createObject(from: user)
-            container.viewContext.delete(object)
-            try container.viewContext.save()
         }
     }
     

@@ -6,26 +6,12 @@
 //
 
 import XCTest
-import Combine
 @testable import Pago_SwiftUI
 
 class APIRequestTests: XCTestCase {
-    var cancellables: Set<AnyCancellable>!
-    
-    override func setUp() {
-        super.setUp()
-        cancellables = Set<AnyCancellable>()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-        cancellables = nil
-    }
-    
     func testGetUsersSuccess() async {
         let mockAPIRequest = MockAPIRequest(result: .success(MockAPIResponse.fetchedUser))
         let expectation = XCTestExpectation(description: "Async Test Success")
-        
         do {
             let result = try await mockAPIRequest.getUsers()
             switch result {
@@ -45,7 +31,6 @@ class APIRequestTests: XCTestCase {
     func testGetUsersFailure() async {
         let mockAPIRequest = MockAPIRequest(result: .failure(APIError.unknown))
         let expectation = XCTestExpectation(description: "Async Test Failure")
-        
         do {
             let result = try await mockAPIRequest.getUsers()
             switch result {

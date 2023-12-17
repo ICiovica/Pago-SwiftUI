@@ -9,7 +9,6 @@ import XCTest
 @testable import Pago_SwiftUI
 
 final class CoreDataTests: XCTestCase {
-    
     override func setUp() {
         super.setUp()
         cleanUpCoreData()
@@ -22,16 +21,13 @@ final class CoreDataTests: XCTestCase {
     
     private func cleanUpCoreData() {
         do {
-            let fetchedUsers = try CoreDataService().fetch()
-            for user in fetchedUsers {
-                try CoreDataService().delete(UserModel(userCD: user))
-            }
+            try CoreDataService().cleanUpUsers()
         } catch {
             XCTFail("Error cleaning up Core Data: \(error)")
         }
     }
     
-    func addUserToCoreDataTest() {
+    func testAddUserToCoreData() {
         let user = UserModel(id: "123", name: "John Doe", email: "john@example.com", phone: "1234567890")
         do {
             try CoreDataService().add(user)
@@ -47,7 +43,7 @@ final class CoreDataTests: XCTestCase {
         }
     }
     
-    func testAddUsersToCoreDataTest() {
+    func testAddUsersToCoreData() {
         let users = [
             UserModel(id: "1", name: "John Doe", email: "john@example.com", phone: "1234567890"),
             UserModel(id: "2", name: "Jane Doe", email: "jane@example.com", phone: "9876543210")
@@ -71,7 +67,6 @@ final class CoreDataTests: XCTestCase {
     }
     
     func testUpdateUser() {
-        // Arrange
         let initialUser = UserModel(id: "1", name: "John Doe", email: "john@example.com", phone: "1234567890")
         let updatedDetails = UserDetailsModel(firstName: "UpdatedJohn", lastName: "UpdatedDoe", phone: "5555555555", email: "updatedjohn@example.com")
         
