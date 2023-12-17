@@ -69,6 +69,10 @@ class UsersViewModel: ObservableObject {
     }
     
     func updateUser(_ user: UserModel, completion: @escaping () -> Void) {
+        guard !self.user.invalidUpdate(user) else {
+            completion()
+            return
+        }
         if let index = users.firstIndex(where: { $0.id == user.id }) {
             do {
                 try CoreDataService().updateUser(user, with: self.user)

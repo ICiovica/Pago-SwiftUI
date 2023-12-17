@@ -30,14 +30,9 @@ struct InputDetailView: View {
     var body: some View {
         Section {
             VStack(alignment: .leading) {
-                Group {
-                    detailTitleVw
-                    textFieldVw
-                    rectangleVw
-                }
-                .transaction { transaction in
-                    transaction.animation = nil
-                }
+                detailTitleVw
+                textFieldVw
+                rectangleVw
                 if invalidInput {
                     alertVw
                 }
@@ -88,9 +83,7 @@ private extension InputDetailView {
         case .phone:
             user.phone = input
         }
-        withAnimation(.easeOut(duration: 0.25)) {
-            invalidInput = user.invalidDetail(detail)
-        }
+        invalidInput = user.invalidDetail(detail)
     }
 }
 

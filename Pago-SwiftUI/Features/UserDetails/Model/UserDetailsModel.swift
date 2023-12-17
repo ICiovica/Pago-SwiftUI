@@ -33,4 +33,13 @@ struct UserDetailsModel {
             return email.range(of: emailRegex, options: .regularExpression) == nil
         }
     }
+    
+    func invalidUpdate(_ user: UserModel) -> Bool {
+        if user.name == "\(firstName) \(lastName)",
+           user.phone == phone,
+           user.email == email {
+            return true
+        }
+        return false
+    }
 }
