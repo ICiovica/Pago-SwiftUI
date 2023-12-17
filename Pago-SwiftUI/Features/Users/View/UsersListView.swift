@@ -14,7 +14,11 @@ struct UsersListView: View {
         List {
             sectionTitleVw
             ForEach(vm.users, id: \.id) { user in
-                UserView(user: user)
+                NavigationLink {
+                    UserDetailsView(vm: vm, user: user)
+                } label: {
+                    UserView(user: user)
+                }
             }
         }
         .listStyle(.plain)

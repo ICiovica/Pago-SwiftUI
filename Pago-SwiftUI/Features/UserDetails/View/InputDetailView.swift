@@ -1,5 +1,5 @@
 //
-//  DetailInputView.swift
+//  InputDetailView.swift
 //  Pago-SwiftUI
 //
 //  Created by IonutCiovica on 15/12/2023.
@@ -7,25 +7,40 @@
 
 import SwiftUI
 
-struct DetailInputView: View {
+struct InputDetailView: View {
     @FocusState private var isFocused
     @State private var input: String = ""
     @State private var invalidInput = false
-    @Binding var newUser: NewUserModel
+    @Binding var user: UserDetailsModel
     let detail: UserDetail
     
+    var placeHolder: String {
+        switch detail {
+        case .firstName:
+            return user.firstName
+        case .lastName:
+            return user.lastName
+        case .phone:
+            return user.phone
+        case .email:
+            return user.email
+        }
+    }
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Group {
-                detailTitleVw
-                textFieldVw
-                rectangleVw
-            }
-            .transaction { transaction in
-                transaction.animation = nil
-            }
-            if invalidInput {
-                alertVw
+        Section {
+            VStack(alignment: .leading) {
+                Group {
+                    detailTitleVw
+                    textFieldVw
+                    rectangleVw
+                }
+                .transaction { transaction in
+                    transaction.animation = nil
+                }
+                if invalidInput {
+                    alertVw
+                }
             }
         }
         .onTapGesture { isFocused.toggle() }
@@ -33,14 +48,14 @@ struct DetailInputView: View {
 }
 
 // MARK: - Views
-private extension DetailInputView {
+private extension InputDetailView {
     var detailTitleVw: some View {
         Text(detail.rawValue)
             .font(.system(.callout, design: .rounded, weight: .semibold))
     }
     
     var textFieldVw: some View {
-        TextField("", text: $input)
+        TextField(placeHolder, text: $input)
             .focused($isFocused)
             .onChange(of: input, perform: inputChanged(_:))
     }
@@ -61,24 +76,24 @@ private extension DetailInputView {
 }
 
 // MARK: Methods
-private extension DetailInputView {
+private extension InputDetailView {
     func inputChanged(_ input: String) {
         switch detail {
         case .firstName:
-            newUser.firstName = input
+            user.firstName = input
         case .lastName:
-            newUser.lastName = input
+            user.lastName = input
         case .email:
-            newUser.email = input
+            user.email = input
         case .phone:
-            newUser.phone = input
+            user.phone = input
         }
         withAnimation(.easeOut(duration: 0.25)) {
-            invalidInput = newUser.invalidDetail(detail)
+            invalidInput = user.invalidDetail(detail)
         }
     }
 }
 
 #Preview {
-    DetailInputView(newUser: .constant(.init()), detail: .firstName)
+    InputDetailView(user: .constant(.init()), detail: .firstName)
 }

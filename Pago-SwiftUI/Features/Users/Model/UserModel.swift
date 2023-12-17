@@ -9,9 +9,28 @@ import Foundation
 
 struct UserModel: Identifiable {
     let id: String
-    let name: String
-    let email: String
-    let phone: String
+    var name: String
+    var email: String
+    var phone: String
+    
+    var placeHolderInitials: String {
+        let nameComponents = name.components(separatedBy: " ")
+        if nameComponents.count >= 2 {
+            if let firstInital = nameComponents[0].first?.description,
+               let secondInitial = nameComponents.suffix(from: 1).joined(separator: " ").first?.description {
+                return "\(firstInital)\(secondInitial)"
+            }
+        }
+        return "N/A"
+    }
+    
+    var imageURL: URL? {
+        if let number = Int(id),
+           !number.isMultiple(of: 2) {
+            return URL(string: "https://picsum.photos/200/200")
+        }
+        return nil
+    }
     
     init(id: String, name: String, email: String, phone: String) {
         self.id = id
@@ -20,7 +39,7 @@ struct UserModel: Identifiable {
         self.phone = phone
     }
     
-    init(user: NewUserModel) {
+    init(user: UserDetailsModel) {
         self.id = UUID().uuidString
         self.name = "\(user.firstName) \(user.lastName)"
         self.email = user.email

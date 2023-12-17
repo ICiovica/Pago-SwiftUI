@@ -41,9 +41,7 @@ private extension ContentView {
     
     var trailingToolbarNavigationLinkVw: some View {
         NavigationLink {
-            NewUserView() { user in vm.addNewUser(user) }
-                .navigationTitle("users_add_new_title")
-                .navigationBarTitleDisplayMode(.large)
+            UserDetailsView(vm: vm, user: nil)
         } label: {
             trailingToolbarVw
         }

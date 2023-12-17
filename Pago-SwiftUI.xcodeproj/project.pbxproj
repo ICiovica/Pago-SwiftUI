@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC439DD02B2F4A69006DCC9D /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC439DCF2B2F4A69006DCC9D /* UserDetail.swift */; };
 		AC5A76E32B2C427000F91FD5 /* Pago_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A76E22B2C427000F91FD5 /* Pago_SwiftUIApp.swift */; };
 		AC5A76E52B2C427000F91FD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A76E42B2C427000F91FD5 /* ContentView.swift */; };
 		AC5A76E72B2C427200F91FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5A76E62B2C427200F91FD5 /* Assets.xcassets */; };
@@ -19,12 +20,16 @@
 		AC5A77062B2C4C8700F91FD5 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A77052B2C4C8700F91FD5 /* UserView.swift */; };
 		AC5A77082B2C4D0700F91FD5 /* FetchAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A77072B2C4D0700F91FD5 /* FetchAlertModel.swift */; };
 		AC5A770A2B2C4D2100F91FD5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC5A77092B2C4D2100F91FD5 /* Localizable.strings */; };
-		ACE9DC072B2C616F0096250C /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC062B2C616F0096250C /* NewUserView.swift */; };
-		ACE9DC092B2C6B960096250C /* NewUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC082B2C6B960096250C /* NewUserModel.swift */; };
-		ACE9DC0F2B2C6D3F0096250C /* DetailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC0E2B2C6D3F0096250C /* DetailInputView.swift */; };
+		AC647A612B2F582B005193A9 /* UserConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A602B2F582B005193A9 /* UserConstants.swift */; };
+		AC647A642B2F5850005193A9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A632B2F5850005193A9 /* ImageCache.swift */; };
+		AC647A662B2F586D005193A9 /* AsyncImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A652B2F586D005193A9 /* AsyncImageCache.swift */; };
+		ACE9DC072B2C616F0096250C /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC062B2C616F0096250C /* UserDetailsView.swift */; };
+		ACE9DC092B2C6B960096250C /* UserDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC082B2C6B960096250C /* UserDetailsModel.swift */; };
+		ACE9DC0F2B2C6D3F0096250C /* InputDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC0E2B2C6D3F0096250C /* InputDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC439DCF2B2F4A69006DCC9D /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		AC5A76DF2B2C427000F91FD5 /* Pago-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pago-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5A76E22B2C427000F91FD5 /* Pago_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pago_SwiftUIApp.swift; sourceTree = "<group>"; };
 		AC5A76E42B2C427000F91FD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,9 +43,12 @@
 		AC5A77052B2C4C8700F91FD5 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		AC5A77072B2C4D0700F91FD5 /* FetchAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAlertModel.swift; sourceTree = "<group>"; };
 		AC5A77092B2C4D2100F91FD5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		ACE9DC062B2C616F0096250C /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
-		ACE9DC082B2C6B960096250C /* NewUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserModel.swift; sourceTree = "<group>"; };
-		ACE9DC0E2B2C6D3F0096250C /* DetailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInputView.swift; sourceTree = "<group>"; };
+		AC647A602B2F582B005193A9 /* UserConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConstants.swift; sourceTree = "<group>"; };
+		AC647A632B2F5850005193A9 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		AC647A652B2F586D005193A9 /* AsyncImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCache.swift; sourceTree = "<group>"; };
+		ACE9DC062B2C616F0096250C /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		ACE9DC082B2C6B960096250C /* UserDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsModel.swift; sourceTree = "<group>"; };
+		ACE9DC0E2B2C6D3F0096250C /* InputDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC439DCD2B2F4A44006DCC9D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AC647A622B2F583F005193A9 /* Cache */,
+				AC647A5F2B2F581E005193A9 /* Constants */,
+				AC439DCE2B2F4A55006DCC9D /* UserDetail */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		AC439DCE2B2F4A55006DCC9D /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AC439DCF2B2F4A69006DCC9D /* UserDetail.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
 		AC5A76D62B2C427000F91FD5 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +103,7 @@
 				AC5A76F22B2C436D00F91FD5 /* Features */,
 				AC5A76F52B2C43C300F91FD5 /* Network */,
 				AC5A76F12B2C42FB00F91FD5 /* Resources */,
+				AC439DCD2B2F4A44006DCC9D /* Support */,
 			);
 			path = "Pago-SwiftUI";
 			sourceTree = "<group>";
@@ -111,7 +138,7 @@
 		AC5A76F22B2C436D00F91FD5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				ACE9DC0A2B2C6CB80096250C /* NewUser */,
+				ACE9DC0A2B2C6CB80096250C /* UserDetails */,
 				AC5A76F32B2C437800F91FD5 /* Users */,
 			);
 			path = Features;
@@ -178,20 +205,37 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		ACE9DC0A2B2C6CB80096250C /* NewUser */ = {
+		AC647A5F2B2F581E005193A9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AC647A602B2F582B005193A9 /* UserConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AC647A622B2F583F005193A9 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				AC647A632B2F5850005193A9 /* ImageCache.swift */,
+				AC647A652B2F586D005193A9 /* AsyncImageCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		ACE9DC0A2B2C6CB80096250C /* UserDetails */ = {
 			isa = PBXGroup;
 			children = (
 				ACE9DC0B2B2C6CBE0096250C /* Model */,
 				ACE9DC0D2B2C6CD20096250C /* View */,
 				ACE9DC0C2B2C6CCC0096250C /* ViewModel */,
 			);
-			path = NewUser;
+			path = UserDetails;
 			sourceTree = "<group>";
 		};
 		ACE9DC0B2B2C6CBE0096250C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACE9DC082B2C6B960096250C /* NewUserModel.swift */,
+				ACE9DC082B2C6B960096250C /* UserDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,8 +250,8 @@
 		ACE9DC0D2B2C6CD20096250C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ACE9DC062B2C616F0096250C /* NewUserView.swift */,
-				ACE9DC0E2B2C6D3F0096250C /* DetailInputView.swift */,
+				ACE9DC062B2C616F0096250C /* UserDetailsView.swift */,
+				ACE9DC0E2B2C6D3F0096250C /* InputDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,18 +327,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC647A642B2F5850005193A9 /* ImageCache.swift in Sources */,
 				AC5A76F92B2C440700F91FD5 /* UserDTO.swift in Sources */,
 				AC5A77022B2C4C6500F91FD5 /* UsersViewModel.swift in Sources */,
 				AC5A77042B2C4C7900F91FD5 /* UsersListView.swift in Sources */,
 				AC5A77062B2C4C8700F91FD5 /* UserView.swift in Sources */,
+				AC647A662B2F586D005193A9 /* AsyncImageCache.swift in Sources */,
 				AC5A76E52B2C427000F91FD5 /* ContentView.swift in Sources */,
 				AC5A77082B2C4D0700F91FD5 /* FetchAlertModel.swift in Sources */,
 				AC5A76FB2B2C444600F91FD5 /* APIRequest.swift in Sources */,
-				ACE9DC072B2C616F0096250C /* NewUserView.swift in Sources */,
+				AC439DD02B2F4A69006DCC9D /* UserDetail.swift in Sources */,
+				ACE9DC072B2C616F0096250C /* UserDetailsView.swift in Sources */,
 				AC5A76FE2B2C4A6B00F91FD5 /* UserModel.swift in Sources */,
-				ACE9DC092B2C6B960096250C /* NewUserModel.swift in Sources */,
+				AC647A612B2F582B005193A9 /* UserConstants.swift in Sources */,
+				ACE9DC092B2C6B960096250C /* UserDetailsModel.swift in Sources */,
 				AC5A76E32B2C427000F91FD5 /* Pago_SwiftUIApp.swift in Sources */,
-				ACE9DC0F2B2C6D3F0096250C /* DetailInputView.swift in Sources */,
+				ACE9DC0F2B2C6D3F0096250C /* InputDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

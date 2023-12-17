@@ -1,5 +1,5 @@
 //
-//  NewUserView.swift
+//  UserDetailsView.swift
 //  Pago-SwiftUI
 //
 //  Created by IonutCiovica on 15/12/2023.
@@ -7,31 +7,36 @@
 
 import SwiftUI
 
-struct NewUserView: View {
+struct UserDetailsView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var newUser = NewUserModel()
-    let action: (UserModel) -> Void
+    @ObservedObject var vm: UsersViewModel
+    let user: UserModel?
     
     var body: some View {
         List {
             ForEach(UserDetail.allCases, id: \.id) { detail in
-                Section {
-                    DetailInputView(newUser: $newUser, detail: detail)
-                        .foregroundStyle(Color.listTextForeground)
-                }
+                InputDetailView(user: $vm.user, detail: detail)
+                    .foregroundStyle(Color.listTextForeground)
             }
         }
+        .navigationTitle(user == nil ? "user_add_new_title" : "user_update_title")
+        .navigationBarTitleDisplayMode(.large)
         .overlay { saveBtnVw }
+        .onAppear { vm.handleUserDetails(user) }
     }
 }
 
 // MARK: - Views
-private extension NewUserView {
+private extension UserDetailsView {
     var saveBtnVw: some View {
         VStack {
             Spacer()
             Button {
-                saveTapped()
+                if let user {
+                    vm.updateUser(user) { dismiss() }
+                } else {
+                    vm.addNewUser() { dismiss() }
+                }
             } label: {
                 saveBtnLabel
             }
@@ -40,7 +45,7 @@ private extension NewUserView {
     }
     
     var saveBtnLabel: some View {
-        Text("users_add_new_save")
+        Text(user == nil ? "user_add_new_save" : "user_update_save")
             .font(.system(.title3, design: .rounded, weight: .semibold))
             .padding(12)
             .frame(maxWidth: .infinity)
@@ -51,15 +56,6 @@ private extension NewUserView {
     }
 }
 
-// MARK: - Methods
-private extension NewUserView {
-    func saveTapped() {
-        guard newUser.isValid else { return }
-        action(UserModel(user: newUser))
-        dismiss()
-    }
-}
-
 #Preview {
-    NewUserView() {_ in}
+    UserDetailsView(vm: UsersViewModel(), user: nil)
 }

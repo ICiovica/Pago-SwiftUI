@@ -12,10 +12,21 @@ struct UserView: View {
     
     var body: some View {
         HStack {
-            Text(user.id)
+            imageVw
             Text(user.name)
-            Text(user.email)
-            Text(user.phone)
+            Spacer()
+        }
+    }
+}
+
+// MARK: - Views
+private extension UserView {
+    var imageVw: some View {
+        AsyncImageCache(url: user.imageURL, placeholderInitials: user.placeHolderInitials) { image in
+            image.resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: UserConstants.imageFrame)
+                .clipShape(Circle())
         }
     }
 }
