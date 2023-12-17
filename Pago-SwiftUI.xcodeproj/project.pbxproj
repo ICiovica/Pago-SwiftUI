@@ -26,10 +26,21 @@
 		AC647A692B2F6294005193A9 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC647A672B2F6294005193A9 /* CoreDataModel.xcdatamodeld */; };
 		AC647A6C2B2F62DA005193A9 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A6B2B2F62DA005193A9 /* CoreDataService.swift */; };
 		AC647A6E2B2F65C2005193A9 /* CoreDataAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A6D2B2F65C2005193A9 /* CoreDataAlert.swift */; };
+		AC647A7E2B2F8645005193A9 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A7D2B2F8645005193A9 /* CoreDataTests.swift */; };
 		ACE9DC072B2C616F0096250C /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC062B2C616F0096250C /* UserDetailsView.swift */; };
 		ACE9DC092B2C6B960096250C /* UserDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC082B2C6B960096250C /* UserDetailsModel.swift */; };
 		ACE9DC0F2B2C6D3F0096250C /* InputDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC0E2B2C6D3F0096250C /* InputDetailView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC647A772B2F8627005193A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC5A76D72B2C427000F91FD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC5A76DE2B2C427000F91FD5;
+			remoteInfo = "Pago-SwiftUI";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AC439DCF2B2F4A69006DCC9D /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
@@ -52,6 +63,8 @@
 		AC647A682B2F6294005193A9 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		AC647A6B2B2F62DA005193A9 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		AC647A6D2B2F65C2005193A9 /* CoreDataAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAlert.swift; sourceTree = "<group>"; };
+		AC647A732B2F8627005193A9 /* Pago-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pago-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC647A7D2B2F8645005193A9 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		ACE9DC062B2C616F0096250C /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		ACE9DC082B2C6B960096250C /* UserDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsModel.swift; sourceTree = "<group>"; };
 		ACE9DC0E2B2C6D3F0096250C /* InputDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetailView.swift; sourceTree = "<group>"; };
@@ -59,6 +72,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		AC5A76DC2B2C427000F91FD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC647A702B2F8627005193A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -91,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				AC5A76E12B2C427000F91FD5 /* Pago-SwiftUI */,
+				AC647A742B2F8627005193A9 /* Pago-SwiftUITests */,
 				AC5A76E02B2C427000F91FD5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				AC5A76DF2B2C427000F91FD5 /* Pago-SwiftUI.app */,
+				AC647A732B2F8627005193A9 /* Pago-SwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +261,22 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		AC647A742B2F8627005193A9 /* Pago-SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC647A7C2B2F862E005193A9 /* CoreDataTests */,
+			);
+			path = "Pago-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		AC647A7C2B2F862E005193A9 /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC647A7D2B2F8645005193A9 /* CoreDataTests.swift */,
+			);
+			path = CoreDataTests;
+			sourceTree = "<group>";
+		};
 		ACE9DC0A2B2C6CB80096250C /* UserDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +331,24 @@
 			productReference = AC5A76DF2B2C427000F91FD5 /* Pago-SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AC647A722B2F8627005193A9 /* Pago-SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC647A792B2F8627005193A9 /* Build configuration list for PBXNativeTarget "Pago-SwiftUITests" */;
+			buildPhases = (
+				AC647A6F2B2F8627005193A9 /* Sources */,
+				AC647A702B2F8627005193A9 /* Frameworks */,
+				AC647A712B2F8627005193A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC647A782B2F8627005193A9 /* PBXTargetDependency */,
+			);
+			name = "Pago-SwiftUITests";
+			productName = "Pago-SwiftUITests";
+			productReference = AC647A732B2F8627005193A9 /* Pago-SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -305,6 +361,10 @@
 				TargetAttributes = {
 					AC5A76DE2B2C427000F91FD5 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					AC647A722B2F8627005193A9 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = AC5A76DE2B2C427000F91FD5;
 					};
 				};
 			};
@@ -322,6 +382,7 @@
 			projectRoot = "";
 			targets = (
 				AC5A76DE2B2C427000F91FD5 /* Pago-SwiftUI */,
+				AC647A722B2F8627005193A9 /* Pago-SwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -334,6 +395,13 @@
 				AC5A76EA2B2C427200F91FD5 /* Preview Assets.xcassets in Resources */,
 				AC5A770A2B2C4D2100F91FD5 /* Localizable.strings in Resources */,
 				AC5A76E72B2C427200F91FD5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC647A712B2F8627005193A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +434,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC647A6F2B2F8627005193A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC647A7E2B2F8645005193A9 /* CoreDataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC647A782B2F8627005193A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC5A76DE2B2C427000F91FD5 /* Pago-SwiftUI */;
+			targetProxy = AC647A772B2F8627005193A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AC5A76EB2B2C427200F91FD5 /* Debug */ = {
@@ -550,6 +634,42 @@
 			};
 			name = Release;
 		};
+		AC647A7A2B2F8627005193A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63XWRVA4JU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CIC.Pago-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pago-SwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pago-SwiftUI";
+			};
+			name = Debug;
+		};
+		AC647A7B2B2F8627005193A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63XWRVA4JU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CIC.Pago-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pago-SwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pago-SwiftUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -567,6 +687,15 @@
 			buildConfigurations = (
 				AC5A76EE2B2C427200F91FD5 /* Debug */,
 				AC5A76EF2B2C427200F91FD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC647A792B2F8627005193A9 /* Build configuration list for PBXNativeTarget "Pago-SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC647A7A2B2F8627005193A9 /* Debug */,
+				AC647A7B2B2F8627005193A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

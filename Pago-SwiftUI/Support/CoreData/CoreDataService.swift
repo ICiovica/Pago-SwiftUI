@@ -5,8 +5,6 @@
 //  Created by IonutCiovica on 17/12/2023.
 //
 
-import Foundation
-
 import CoreData
 
 private enum CoreDataError: Error {
@@ -32,12 +30,10 @@ struct CoreDataService {
         }
     }
     
-    func updateUser(_ user: UserModel, with details: UserDetailsModel) throws {
+    func delete(_ user: UserModel) throws {
         try container.viewContext.performAndWait {
             let object = try createObject(from: user)
-            object.name = "\(details.firstName) \(details.lastName)"
-            object.email = details.email
-            object.phone = details.phone
+            container.viewContext.delete(object)
             try container.viewContext.save()
         }
     }
@@ -57,6 +53,16 @@ struct CoreDataService {
                 configure(userCD, with: user)
                 try container.viewContext.save()
             }
+        }
+    }
+    
+    func updateUser(_ user: UserModel, with details: UserDetailsModel) throws {
+        try container.viewContext.performAndWait {
+            let object = try createObject(from: user)
+            object.name = "\(details.firstName) \(details.lastName)"
+            object.email = details.email
+            object.phone = details.phone
+            try container.viewContext.save()
         }
     }
     
