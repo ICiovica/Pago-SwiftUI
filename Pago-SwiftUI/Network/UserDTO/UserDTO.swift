@@ -11,7 +11,7 @@ import Foundation
 typealias Response = [UserDTO]
 
 // MARK: - User
-struct UserDTO: Codable {
+struct UserDTO: Codable, Equatable {
     let id: Int
     let name, email: String
     let status: Status

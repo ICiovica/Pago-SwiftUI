@@ -15,7 +15,7 @@ class UsersViewModel: ObservableObject {
     
     @Published var user = UserDetailsModel()
     
-    @MainActor private func fetchUsers() async -> [UserModel] {
+    @MainActor func fetchUsers() async -> [UserModel] {
         defer {
             isLoading = false
         }

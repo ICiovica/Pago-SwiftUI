@@ -27,6 +27,8 @@
 		AC647A6C2B2F62DA005193A9 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A6B2B2F62DA005193A9 /* CoreDataService.swift */; };
 		AC647A6E2B2F65C2005193A9 /* CoreDataAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A6D2B2F65C2005193A9 /* CoreDataAlert.swift */; };
 		AC647A7E2B2F8645005193A9 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A7D2B2F8645005193A9 /* CoreDataTests.swift */; };
+		AC647A812B2F8C0D005193A9 /* APIRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A802B2F8C0D005193A9 /* APIRequestsTests.swift */; };
+		AC647A832B2F8FBC005193A9 /* MockAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC647A822B2F8FBC005193A9 /* MockAPIRequest.swift */; };
 		ACE9DC072B2C616F0096250C /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC062B2C616F0096250C /* UserDetailsView.swift */; };
 		ACE9DC092B2C6B960096250C /* UserDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC082B2C6B960096250C /* UserDetailsModel.swift */; };
 		ACE9DC0F2B2C6D3F0096250C /* InputDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE9DC0E2B2C6D3F0096250C /* InputDetailView.swift */; };
@@ -65,6 +67,8 @@
 		AC647A6D2B2F65C2005193A9 /* CoreDataAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAlert.swift; sourceTree = "<group>"; };
 		AC647A732B2F8627005193A9 /* Pago-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pago-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC647A7D2B2F8645005193A9 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		AC647A802B2F8C0D005193A9 /* APIRequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestsTests.swift; sourceTree = "<group>"; };
+		AC647A822B2F8FBC005193A9 /* MockAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIRequest.swift; sourceTree = "<group>"; };
 		ACE9DC062B2C616F0096250C /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		ACE9DC082B2C6B960096250C /* UserDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsModel.swift; sourceTree = "<group>"; };
 		ACE9DC0E2B2C6D3F0096250C /* InputDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputDetailView.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 		AC647A742B2F8627005193A9 /* Pago-SwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
+				AC647A7F2B2F8BF5005193A9 /* APIRequestTests */,
 				AC647A7C2B2F862E005193A9 /* CoreDataTests */,
 			);
 			path = "Pago-SwiftUITests";
@@ -275,6 +280,15 @@
 				AC647A7D2B2F8645005193A9 /* CoreDataTests.swift */,
 			);
 			path = CoreDataTests;
+			sourceTree = "<group>";
+		};
+		AC647A7F2B2F8BF5005193A9 /* APIRequestTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC647A802B2F8C0D005193A9 /* APIRequestsTests.swift */,
+				AC647A822B2F8FBC005193A9 /* MockAPIRequest.swift */,
+			);
+			path = APIRequestTests;
 			sourceTree = "<group>";
 		};
 		ACE9DC0A2B2C6CB80096250C /* UserDetails */ = {
@@ -438,7 +452,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC647A812B2F8C0D005193A9 /* APIRequestsTests.swift in Sources */,
 				AC647A7E2B2F8645005193A9 /* CoreDataTests.swift in Sources */,
+				AC647A832B2F8FBC005193A9 /* MockAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

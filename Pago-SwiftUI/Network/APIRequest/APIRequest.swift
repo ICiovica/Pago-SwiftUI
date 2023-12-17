@@ -8,7 +8,7 @@
 import os.log
 import Foundation
 
-private enum APIError: Error {
+enum APIError: Error {
     case urlSessionFailed
     case badRequest(Int)
     case serverError(Int)
