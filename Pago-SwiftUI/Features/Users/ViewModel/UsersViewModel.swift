@@ -10,11 +10,17 @@ import Foundation
 class UsersViewModel: ObservableObject {
     @Published private(set) var users: [UserModel] = []
     @Published private(set) var isLoading = false
+    @Published var user = UserDetailsModel()
     var fetchAlertModel = FetchAlertModel()
     var coreDataAlert = CoreDataAlert()
     
-    @Published var user = UserDetailsModel()
-    
+    func handleFetchAlert() {
+        fetchAlertModel.isPresented.toggle()
+    }
+}
+
+// MARK: APIRequest
+private extension UsersViewModel {
     @MainActor func fetchUsers() async -> [UserModel] {
         defer {
             isLoading = false
@@ -36,7 +42,10 @@ class UsersViewModel: ObservableObject {
         }
         return []
     }
-    
+}
+
+// MARK: - CoreData
+extension UsersViewModel {
     @MainActor func loadUsers() async {
         do {
             let usersCD = try CoreDataService().fetch()
@@ -88,10 +97,6 @@ class UsersViewModel: ObservableObject {
                 print("Update CD operation failed: \(error.localizedDescription)")
             }
         }
-    }
-    
-    func handleFetchAlert() {
-        fetchAlertModel.isPresented.toggle()
     }
 }
 
