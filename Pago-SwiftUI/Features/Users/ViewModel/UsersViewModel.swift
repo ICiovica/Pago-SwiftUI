@@ -13,6 +13,7 @@ class UsersViewModel: ObservableObject {
     var fetchAlertModel = FetchAlertModel()
     
     @MainActor func fetchUsers() async {
+        guard users.isEmpty else { return }
         defer {
             isLoading = false
         }
@@ -21,8 +22,8 @@ class UsersViewModel: ObservableObject {
             let result = try await APIRequest().getUsers()
             switch result {
             case .success(let response):
-                let fetchedUsers = response.map({ UserModel(userDTO: $0) })
-                users = fetchedUsers
+                let activeUsers = response.filter({ $0.status.rawValue.lowercased() == "inactive" })
+                users = activeUsers.map({ UserModel(userDTO: $0) })
             case .failure(let error):
                 handleFetchAlert()
                 print("Error: \(error.localizedDescription)")
@@ -31,6 +32,10 @@ class UsersViewModel: ObservableObject {
             handleFetchAlert()
             print("Error: \(error.localizedDescription)")
         }
+    }
+    
+    func addNewUser(_ user: UserModel) {
+        users.append(user)
     }
     
     func handleFetchAlert() {

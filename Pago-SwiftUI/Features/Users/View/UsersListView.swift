@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UsersListView: View {
-    @StateObject private var vm = UsersViewModel()
+    @ObservedObject var vm: UsersViewModel
     
     var body: some View {
         List {
@@ -18,7 +18,6 @@ struct UsersListView: View {
             }
         }
         .listStyle(.plain)
-        .padding(.top)
         .overlay {
             if vm.isLoading { ProgressView() }
         }
@@ -50,5 +49,5 @@ private extension UsersListView {
 }
 
 #Preview {
-    UsersListView()
+    UsersListView(vm: UsersViewModel())
 }

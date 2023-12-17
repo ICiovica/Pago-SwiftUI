@@ -12,6 +12,8 @@
 // MARK: - Users
 "users_navigation_title" = "Contacte";
 "users_section_title" = "CONTACTELE MELE";
+"users_add_new_title" = "Adauga contact";
+"users_add_new_save" = "Salveaza";
 
 // MARK: - Fetch Alert
 "fetch_alert_title" = "Ooops!";

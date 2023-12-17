@@ -8,25 +8,29 @@
 import Foundation
 
 struct UserModel: Identifiable {
-    let id: Int
+    let id: String
     let name: String
     let email: String
-    let gender: String
-    let status: String
+    let phone: String
     
-    init(id: Int, name: String, email: String, gender: String, status: String) {
+    init(id: String, name: String, email: String, phone: String) {
         self.id = id
         self.name = name
         self.email = email
-        self.gender = gender
-        self.status = status
+        self.phone = phone
+    }
+    
+    init(user: NewUserModel) {
+        self.id = UUID().uuidString
+        self.name = "\(user.firstName) \(user.lastName)"
+        self.email = user.email
+        self.phone = user.phone
     }
     
     init(userDTO: UserDTO) {
-        self.id = userDTO.id
+        self.id = userDTO.id.description
         self.name = userDTO.name
         self.email = userDTO.email
-        self.gender = userDTO.gender.rawValue
-        self.status = userDTO.status.rawValue
+        self.phone = ""
     }
 }

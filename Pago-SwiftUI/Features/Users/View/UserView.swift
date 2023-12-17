@@ -12,15 +12,14 @@ struct UserView: View {
     
     var body: some View {
         HStack {
-            Text(user.id.description)
+            Text(user.id)
             Text(user.name)
             Text(user.email)
-            Text(user.gender)
-            Text(user.status)
+            Text(user.phone)
         }
     }
 }
 
 #Preview {
-    UserView(user: .init(id: 123, name: "John Doe", email: "john.doe@gmail.com", gender: "Male", status: "Active"))
+    UserView(user: .init(id: "123", name: "John Doe", email: "john.doe@gmail.com", phone: "0744123123"))
 }

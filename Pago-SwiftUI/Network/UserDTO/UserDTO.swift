@@ -14,14 +14,7 @@ typealias Response = [UserDTO]
 struct UserDTO: Codable {
     let id: Int
     let name, email: String
-    let gender: Gender
     let status: Status
-}
-
-// MARK: - Gender
-enum Gender: String, Codable {
-    case female = "female"
-    case male = "male"
 }
 
 // MARK: - Status
